@@ -17,7 +17,7 @@ struct ContentView: View {
             Color.indigo
                 .ignoresSafeArea()
             VStack {
-                ColoredRectangleView(redSliderValue: $redSliderValue, greenSliderValue: $greenSliderValue, blueSliderValue: $blueSliderValue)
+                ColoredRectangleView(redSliderValue: redSliderValue, greenSliderValue: greenSliderValue, blueSliderValue: blueSliderValue)
                     .padding(.bottom, 30)
                 SliderView(sliderValue: $redSliderValue, color: Color.red)
                 SliderView(sliderValue: $greenSliderValue, color: Color.green)
@@ -35,9 +35,9 @@ struct ContentView: View {
 }
 
 struct ColoredRectangleView: View {
-    @Binding var redSliderValue: Double
-    @Binding var greenSliderValue: Double
-    @Binding var blueSliderValue: Double
+    var redSliderValue: Double
+    var greenSliderValue: Double
+    var blueSliderValue: Double
 
     var body: some View {
        RoundedRectangle(cornerRadius: 20)
